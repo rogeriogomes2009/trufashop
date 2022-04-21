@@ -61,7 +61,28 @@ const createCharge = async (accessToken, chargeData) => {
   return result.data
 }
 
+const getLoc = async (accessToken, LocId) => {
+  const certificado = fs.readFileSync('../' + process.env.GN_CERTIFICADO)
+
+  const agent = new https.Agent({
+    pfx: certificado,
+    passphrase: '',
+  })
+  const config = {
+    method: 'GET',
+    url: baseUrl + '/v2/loc' + LocId + '/qrcode',
+    headers: {
+      Authorization: 'Bearer ' + accessToken,
+      'Content-type': 'application/json',
+    },
+    httpsAgent: agent,
+  }
+  const result = await axios(config)
+  return result.data
+}
+
 const run = async () => {
+  const chave = process.env.CHAVE_PIX
   const token = await getToken()
   const accessToken = token.access_token
   const cob = {
@@ -75,10 +96,11 @@ const run = async () => {
     valor: {
       original: '150.80',
     },
-    chave: 'aaa', //pedir pelo App do GerenciaNet
+    chave, //pedir pelo App do GerenciaNet
     solicitacaoPagador: 'Cobrança por Serviços Prestados',
   }
   const cobranca = await createCharge(accessToken, cob)
-  console.log(cobranca)
+  const qrcode = await getLoc(accessToken, cobranca.loc.id)
+  console.log(qrcode)
 }
 run()
