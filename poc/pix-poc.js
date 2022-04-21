@@ -70,7 +70,7 @@ const getLoc = async (accessToken, LocId) => {
   })
   const config = {
     method: 'GET',
-    url: baseUrl + '/v2/loc' + LocId + '/qrcode',
+    url: baseUrl + '/v2/loc/' + LocId + '/qrcode',
     headers: {
       Authorization: 'Bearer ' + accessToken,
       'Content-type': 'application/json',
