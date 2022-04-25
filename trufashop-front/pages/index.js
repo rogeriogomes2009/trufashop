@@ -37,13 +37,13 @@ const Index = (props) => {
 
             <ul class='flex space-x-6'>
               <li class='text-white text-lg font-semibold tracking-normal cursor-pointer'>
-                Página Principal
+                Home
               </li>
               <li class='text-white text-lg font-semibold tracking-normal cursor-pointer'>
-                Sobre nós
+                Sobre
               </li>
-              <li class='text-white text-lg font-semibold tracking-normal cursor-pointer'>
-                Contatos
+              <li class='bg-indigo-600 hover:bg-indigo-500 text-lg font-semibold focus:outline-none transition text-white px-4'>
+                Carrinho
               </li>
             </ul>
           </div>
