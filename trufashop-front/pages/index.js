@@ -3,7 +3,7 @@ const Index = (props) => {
   const CartIcon = () => (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      className='h-6 w-10'
+      className='h-5 w-8'
       fill='none'
       viewBox='0 0 24 24'
       stroke='currentColor'
@@ -50,9 +50,10 @@ const Index = (props) => {
         </navbar>
       </header>
       <div className='h-screen bg-red-300'>
-        <main className='grid grid-flow-col grid-cols-3 bg-red-700'>
+        <h1 className='p-2 bg-red-900'></h1>
+        <main className='flex flex-row bg-red-900 flex-wrap gap-0'>
           {products.map((product) => (
-            <section className='flex flex-col md:flex-row py-10 px-5 bg-red-500 rounded-md shadow-lg'>
+            <section className='flex flex-col md:flex-row py-5 px-5 bg-red-500 rounded-3xl shadow-lg w-1/3'>
               <div className='text-indigo-500 flex flex-col justify-between'>
                 <img src={product.data.image.url} alt='' />
               </div>
@@ -62,7 +63,7 @@ const Index = (props) => {
                   {product.data.name}
                 </h3>
                 <div>
-                  <h3 className='text-2xl font-semibold mb-7'>
+                  <h3 className='text-3xl font-semibold mb-7 text-center'>
                     R$ {product.data.price}
                   </h3>
                 </div>
