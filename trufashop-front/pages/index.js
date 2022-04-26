@@ -42,6 +42,9 @@ const Index = (props) => {
               <li class='text-white text-lg font-semibold tracking-normal cursor-pointer'>
                 Sobre
               </li>
+              <li class='text-white text-lg font-semibold tracking-normal cursor-pointer'>
+                Contato
+              </li>
               <li class='bg-indigo-600 hover:bg-indigo-500 text-lg font-semibold focus:outline-none transition text-white px-4'>
                 Carrinho
               </li>
