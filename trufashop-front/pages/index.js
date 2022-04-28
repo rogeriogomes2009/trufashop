@@ -2,12 +2,16 @@ import Prismic from 'prismic-javascript'
 import Header from '../components/Header'
 import Product from '../components/Product'
 import { useCart } from '../components/CartContext'
+import Head from 'next/head'
 
 const Index = ({ products }) => {
   const cart = useCart()
   //const products = [1, 2, 3, 4, 5, 6]
   return (
     <>
+      <Head>
+        <title>TRUFASHOP</title>
+      </Head>
       <Header />
       <div className='h-screen bg-red-300'>
         <h1 className='p-2 bg-red-900'></h1>
@@ -17,7 +21,6 @@ const Index = ({ products }) => {
           ))}
         </main>
       </div>
-      <pre>{JSON.stringify(cart.cart, null, 2)}</pre>
     </>
   )
 }
