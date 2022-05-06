@@ -7,11 +7,11 @@ const Product = ({ product }) => {
     cart.addToCart(product)
   }
   return (
-    <section className='flex flex-col md:flex-row py-5 px-5 bg-red-500 rounded-3xl shadow-lg w-1/3'>
+    <section className='flex flex-col md:flex-row py-5 px-5 bg-gradient-to-tr from-gray-300 to-white rounded-3xl shadow-lg w-1/3'>
       <div className='text-indigo-500 flex flex-col justify-between'>
         <img src={product.data.image.url} alt='' />
       </div>
-      <div className='text-white'>
+      <div className='text-black'>
         <h4 className='uppercase text-lg text-right'>peça já!</h4>
         <h3 className='font-style: italic text-black text-2xl font-medium text-right'>
           {product.data.name}

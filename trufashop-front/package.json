@@ -12,6 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.27.2",
+    "formik": "^2.2.9",
     "next": "^12.1.5",
     "prismic-javascript": "^3.0.2",
     "react": "^18.0.0",

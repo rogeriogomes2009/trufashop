@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "trufashop1",
+  "private_key_id": "721c73aa03a34e5994d9937284ff5a668de4af2f",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCkBLP16/qrUfvE\nINGuW7br/4+xwgbaCLYKPBvbnnWWF1EcZeM8Rh0DLhdwYaJ13PWQG/YV/0r5aAGf\nhPjV9aVuf4KC1UHKPf1ONHj3eQasLRUStID8rdVtW3NE19nIliAqtIulPUhgMIiq\n19nDYdGOd/83tjLaHZYzNsurAVwneYJDt2hdnrKDqWchD+qcDQTypMzAoD14tU7z\n2066L3lYzkyQseQWP/2XavtcnNQDy2BVeateIX/aUC+JrTb05jlW60uNzsXRLz1D\nZCSAZSGviDNcLuGfuDqZnyvYpHSZLqxnNK0fGM5buiuEPd3faKJcOVNXAsWnbeG1\nQXPKfYzDAgMBAAECggEAO3Vw/7+yOZUY3fq/yKN65obYwqoB7dymkYNE3hLNscF2\nKANPozQPpG17FcRvLqcRZlKcnVDVDyEDJZ8Azh+k/y++UkuY9AYQ497l02DOaHBX\naVaCRBeIfYJfgR921d6GfrTAwwA6UpSFltl1Gf1GCI27uaiVOrjrEFnW74EotS4k\n1sYp8TR5wod3bh8XE8bvpmYZnyLjfd9VUSIhfV3zUaXs754DTfKdNfg9UT5emIoC\nxGRrd1bmBAz9sod6MsyY5iPeQurbXuKNyedUaevuoSA6V5v/ADw9g6JI2uiwyO6c\nSqvzxUcBkA7cHxHMpDrQGUcp+mhjnI1FziI8K656wQKBgQDONI0MRJuO3R2xg4lb\nF982i8daqoVJOV20SnFIcaJsYtd/0lKVmNPlDSTUhw0+0LU2GUGJ1p/ZCPFkyPxq\nyFkSwTDKjPVh4PGwZgr1qjdGDlrIgFwL3QeC/8H+wLvsrgj/o0r5NTqM1SNLCQJp\n6Fz1e7Ej+7fqp3aSHAAgwQYT0wKBgQDLoDDAqOa/Ji1L6fXKxW8h5Wm9dQfEaxpH\nn0UO+UWwZ7dpvrT138e8/Jsns6pDpGSucaxw97H0HBjXYvRJS0YlBnki8qgk4lHM\n84iRwxpkStYZl85eENdRLBZSur/0UoKyHhmE1W4IYi+PqtEgEW3xUielamU7tX/E\nBYZvGMg9UQKBgFNKls6lx8/lMOFLKGhLNDZsL5JH3p69NURl7Ww9ukXdhv5yjjkv\nCigzLvVJt+fvlcLMYNS0hMy9+AOly4+2bYRN1M98MIHgwr9l+HdS0hDSK4lhj8ya\n8zXO6SVl5IKtqaTY6KfRAF1ymlbsxLTSzvm5hMvsGVYHXrWV6ddRIItRAoGBAMWj\nc+5rgZuieHCoYvMu8pDZ1OoYvzM8KUO/KQ5BkAyKfpFaktXbIEkkfYvpbKc+1qIi\nnxb+s3CWHN5ho23IbArf34+2KtGyAWeGMNYZonIZ2Pj6SUkv221j9z7RGCMSOtyb\nLnWpmqT0d+lgCJ6xjB6geO6q+BseLSabnkISsbghAoGAWLH27QiK/5R/S/+VLRtf\nQMwU+eldIWg1+T/SHMCJBF6srzDL7S7Fbqf4SwYrhEtkWa9zEcz1BzahGUVvhGYW\nS/+zvm926hyPNyTnRO2xQKVcBnkp6JB4E81x5UeX1nZ13jQAnXgiIN6t5S0hLOR9\nMMSB/4NBF45Rcmyy982jKHw=\n-----END PRIVATE KEY-----\n",
+  "client_email": "trufashop@trufashop1.iam.gserviceaccount.com",
+  "client_id": "111498376206679609337",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/trufashop%40trufashop1.iam.gserviceaccount.com"
+}
