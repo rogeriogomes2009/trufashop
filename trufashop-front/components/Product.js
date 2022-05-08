@@ -12,13 +12,13 @@ const Product = ({ product }) => {
         <img src={product.data.image.url} alt='' />
       </div>
       <div className='text-black'>
-        <h4 className='uppercase text-lg text-right'>peça já!</h4>
+        <h4 className='uppercase text-lg text-right text-red-700'>peça já!</h4>
         <h3 className='font-style: italic text-black text-2xl font-medium text-right'>
           {product.data.name}
         </h3>
         <div>
-          <h3 className='text-3xl font-semibold mb-7 text-center'>
-            R$ {product.data.price}
+          <h3 className='text-3xl font-semibold mb-7 text-right text-red-700'>
+            R$ {Number(product.data.price).toFixed(2).replace('.', ',')}
           </h3>
         </div>
         <div className='flex gap-0.5 mt-0'>

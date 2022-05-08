@@ -1,5 +1,6 @@
 const Express = require('express')
 const cors = require('cors')
+const { saveOrder } = require('./spreadsheet')
 
 const app = Express()
 
@@ -10,7 +11,7 @@ app.get('/', (req, res) => {
   res.send({ ok: true })
 })
 app.post('/create-order', async (req, res) => {
-  console.log(req.body)
+  await saveOrder(req.body)
   res.send({ ok: 1 })
 })
 
