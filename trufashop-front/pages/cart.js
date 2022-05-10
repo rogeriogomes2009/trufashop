@@ -273,6 +273,11 @@ const Index = ({ products }) => {
                       R$ {Number(total).toFixed(2).replace('.', ',')}
                     </div>
                   </div>
+                  <div className='flex justify-between pt-4 border-b'>
+                    <div className='lg:px-4 lg:py-2 m-2 text-lg lg:text-xl font-bold text-center text-gray-800'>
+                      Peça também pelo WhatsApp através do QRCode abaixo
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
