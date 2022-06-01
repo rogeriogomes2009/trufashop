@@ -100,7 +100,7 @@ const createPixCharge = async () => {
   }
   const cobranca = await createCharge(accessToken, cob)
   const qrcode = await getLoc(accessToken, cobranca.loc.id)
-  return qrcode
+  return { qrcode, cobranca }
 }
 
 module.exports = {
