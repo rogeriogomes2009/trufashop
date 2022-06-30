@@ -13,7 +13,7 @@ const options = {
     '/etc/letsencrypt/live/api-trufashop.kadoshdev.xyz/fullchain.pem'
   ),
   //mtls
-  ca: fs.readFileSync('./chain-pix-prod.crt'), //gerencianet
+  ca: fs.readFileSync('../chain-pix-prod.crt'), //gerencianet
   minVersion: 'TLSv1.2',
   requestCert: true,
   rejectUnauthorized: false,
