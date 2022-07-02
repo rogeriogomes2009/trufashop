@@ -1,6 +1,6 @@
 const Express = require('express')
 const cors = require('cors')
-const { saveOrder } = require('./lib/spreadsheet')
+const { saveOrder, updateOrder } = require('./lib/spreadsheet')
 const { createPixCharge } = require('./lib/pix')
 
 const app = Express()
@@ -18,12 +18,13 @@ app.post('/create-order', async (req, res) => {
   res.send({ ok: 1, qrcode, cobranca })
 })
 
-app.post('/webhook/pix*', (req, res) => {
+app.post('/webhook/pix*', async (req, res) => {
   console.log('webhook received')
-  console.log(req.body)
+  const { pix } = req.body
   if (!req.client.authorized) {
     return res.status(401).send('Invalid client certificate')
   }
+  await updateOrder((pix = [0]).txid, 'Pago com PIX')
   res.send({ ok: 1 })
 })
 
