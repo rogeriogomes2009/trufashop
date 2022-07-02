@@ -33,7 +33,7 @@ const Index = ({ products }) => {
       order.items = items
       setOrderStatus('ordering')
       const result = await axios.post(
-        'http://localhost:3002/create-order',
+        'https://api-trufashop.kadoshdev.xyz/create-order',
         order
       )
       setQRCode(result.data.qrcode.imagemQrcode)
