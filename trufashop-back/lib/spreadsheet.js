@@ -57,7 +57,7 @@ const updateOrder = async (orderId, status) => {
     if (cell.value) {
       if (cell.value === orderId) {
         console.log(1 + i, cell.value, typeof cell.value, typeof orderId)
-        const statusCell = await sheet.getCell(1 + i, 8)
+        const statusCell = await sheet.getCell(1 + i, 12)
         statusCell.value = status
       }
     } else {

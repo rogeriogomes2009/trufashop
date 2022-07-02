@@ -89,8 +89,8 @@ const createPixCharge = async () => {
       expiracao: 3600,
     },
     devedor: {
-      cpf: '12345678909',
-      nome: 'Rogerio Gomes',
+      cpf: order.cpf,
+      nome: oder.nome,
     },
     valor: {
       original: '0,04',
