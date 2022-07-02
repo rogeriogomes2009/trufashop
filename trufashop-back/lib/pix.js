@@ -90,7 +90,7 @@ const createPixCharge = async () => {
     },
     devedor: {
       cpf: order.cpf,
-      nome: oder.nome,
+      nome: order.nome,
     },
     valor: {
       original: '0,04',
