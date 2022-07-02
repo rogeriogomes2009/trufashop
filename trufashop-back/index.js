@@ -8,7 +8,7 @@ const { createWebhook } = require('./lib/pix')
 const options = {
   //tls
   key: fs.readFileSync(
-    '/etc/letsencrypt/live/ api-trufashop.kadoshdev.xyz/privkey.pem'
+    '/etc/letsencrypt/live/api-trufashop.kadoshdev.xyz/privkey.pem'
   ),
   cert: fs.readFileSync(
     '/etc/letsencrypt/live/api-trufashop.kadoshdev.xyz/fullchain.pem'
