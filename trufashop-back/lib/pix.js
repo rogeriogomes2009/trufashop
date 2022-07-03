@@ -3,6 +3,7 @@ console.log(process.env.GN_ENV)
 const https = require('https')
 const axios = require('axios')
 const fs = require('fs')
+const { totalmem } = require('os')
 
 const apiProduction = 'https://api-pix.gerencianet.com.br'
 const apiStaging = 'https://api-pix-h.gerencianet.com.br'
@@ -93,7 +94,7 @@ const createPixCharge = async () => {
       nome: order.nome,
     },
     valor: {
-      original: '0,04',
+      original: item.price * item.quantity.toFixed(2),
     },
     chave, //pedir pelo App do GerenciaNet
     solicitacaoPagador: 'Cobrança por Serviços Prestados',
