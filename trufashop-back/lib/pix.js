@@ -1,9 +1,9 @@
+require('dotenv').config({ path: '../.env.producao' })
 console.log(process.env.GN_ENV)
 
 const https = require('https')
 const axios = require('axios')
 const fs = require('fs')
-
 
 const apiProduction = 'https://api-pix.gerencianet.com.br'
 const apiStaging = 'https://api-pix-h.gerencianet.com.br'
