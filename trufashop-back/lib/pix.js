@@ -81,7 +81,7 @@ const getLoc = async (accessToken, LocId) => {
   return result.data
 }
 
-const createPixCharge = async () => {
+const createPixCharge = async (order) => {
   const chave = process.env.CHAVE_PIX
   const token = await getToken()
   const accessToken = token.access_token
@@ -97,7 +97,7 @@ const createPixCharge = async () => {
       original: item.price * item.quantity.toFixed(2),
     },
     chave, //pedir pelo App do GerenciaNet
-    solicitacaoPagador: 'Cobrança por Serviços Prestados',
+    solicitacaoPagador: 'Cobrança por' + order.items.length + 'TRUFAS',
   }
   const cobranca = await createCharge(accessToken, cob)
   const qrcode = await getLoc(accessToken, cobranca.loc.id)

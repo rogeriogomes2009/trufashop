@@ -21,13 +21,11 @@ const options = {
 }
 
 const server = https.createServer(options, app)
-server.listen(
-  443,
-  () => (
-    console.log('server runing...'),
+server.listen(443, () => {
+  console.log('server runing...'),
     console.log('creating webhook for pix'),
     createWebhook().then(() => {
       console.log('webhook created')
     })
-  )
-)
+})
+

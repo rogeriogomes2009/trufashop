@@ -1,6 +1,5 @@
 require('dotenv').config({ path: '../../.env.homologacao' })
 
-const { v4 } = require('uuid')
 
 const { GoogleSpreadsheet } = require('google-spreadsheet')
 const credenciais = require('../credenciais.json')
@@ -17,6 +16,9 @@ const saveOrder = async (order) => {
   const sheet = doc.sheetsByIndex[1]
 
   const orderId = order.id
+  const total = order.items.reduce((prev, curr) => {
+    return prev + curr.price * curr.quantity
+  }, 0)
 
   const rows = order.items.map((item) => {
     const row = {
@@ -31,7 +33,8 @@ const saveOrder = async (order) => {
       Produto: item.name,
       Quantidade: item.quantity,
       ValorUnit: item.price,
-      Total: item.price * item.quantity,
+      Subtotal: item.price * item.quantity,
+      TotalPedido: total,
       StatusPg: 'Aguardando PIX',
       StatusEntrega: 'A Confirmar',
     }
@@ -57,7 +60,7 @@ const updateOrder = async (orderId, status) => {
     if (cell.value) {
       if (cell.value === orderId) {
         console.log(1 + i, cell.value, typeof cell.value, typeof orderId)
-        const statusCell = await sheet.getCell(1 + i, 12)
+        const statusCell = await sheet.getCell(1 + i, 13)
         statusCell.value = status
       }
     } else {
@@ -66,8 +69,33 @@ const updateOrder = async (orderId, status) => {
   }
   await sheet.saveUpdatedCells()
 }
+const getOrder = async (orderId) => {
+  await doc.useServiceAccountAuth({
+    client_email: process.env.EMAIL_GOOGLE_API,
+    private_key: credenciais.private_key,
+  })
+  await doc.loadInfo()
+  const sheet = doc.sheetsByIndex[1]
+  const maxRows = sheet.rowCount
+  await sheet.loadCells('A1:A' + maxRows - 1)
+  await sheet.loadCells('I1:N' + maxRows - 1)
+  const validIndex = [...Array(maxRows).keys()]
 
+  for await (const i of validIndex) {
+    const cell = await sheet.getCell(i, 0)
+    if (cell.value) {
+      if (cell.value === orderId) {
+        const statusCell = await sheet.getCell(i, 13)
+        return statusCell.value
+      }
+    } else {
+      break
+    }
+  }
+  return null
+}
 module.exports = {
   saveOrder,
   updateOrder,
+  getOrder,
 }

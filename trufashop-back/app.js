@@ -1,6 +1,6 @@
 const Express = require('express')
 const cors = require('cors')
-const { saveOrder, updateOrder } = require('./lib/spreadsheet')
+const { saveOrder, updateOrder, getOrder } = require('./lib/spreadsheet')
 const { createPixCharge } = require('./lib/pix')
 
 const app = Express()
@@ -12,15 +12,23 @@ app.get('/', (req, res) => {
   res.send({ ok: true })
 })
 app.post('/create-order', async (req, res) => {
-  const pixCharge = await createPixCharge(req.body)
-  const { qrcode, cobranca } = pixCharge
-  await saveOrder({ ...req.body, id: cobranca.txid })
-  res.send({ ok: 1, qrcode, cobranca })
+  if (req.body.items.length > 0) {
+    const pixCharge = await createPixCharge(req.body)
+    const { qrcode, cobranca } = pixCharge
+    await saveOrder({ ...req.body, id: cobranca.txid })
+    res.send({ ok: 1, qrcode, cobranca })
+  } else {
+    res.send({ ok: 0 })
+  }
+})
+app.get('/order/:txid', async (req, res) => {
+  const status = await getOrder(req.params.txid)
+  res.send({ ok: req.params.txid, status })
 })
 
 app.post('/webhook/pix*', async (req, res) => {
   console.log('webhook received')
-  console.log(req.body)
+  const { pix } = req.body
   if (!req.client.authorized) {
     return res.status(401).send('Invalid client certificate')
   }
