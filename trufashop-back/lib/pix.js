@@ -94,7 +94,7 @@ const createPixCharge = async (order) => {
       nome: order.nome,
     },
     valor: {
-      original: item.price * item.quantity.toFixed(2),
+      original: total.toFixed(2),
     },
     chave, //pedir pelo App do GerenciaNet
     solicitacaoPagador: 'Cobrança por' + order.items.length + 'TRUFAS',

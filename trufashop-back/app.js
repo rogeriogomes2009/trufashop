@@ -8,8 +8,11 @@ const app = Express()
 app.use(cors())
 app.use(Express.json())
 
-app.get('/', (req, res) => {
+app.get('/', (req, res, next) => {
   res.send({ ok: true })
+  res.header('Access-Control-Allow-Origin', '*')
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE')
+  next()
 })
 app.post('/create-order', async (req, res) => {
   if (req.body.items.length > 0) {
